@@ -43,7 +43,7 @@ export function usePrices(holdings: Holding[]) {
         );
 
         if (!response.ok) {
-          throw new Error('Failed to fetch prices');
+          throw new Error(`Failed to fetch prices: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
