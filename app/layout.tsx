@@ -5,7 +5,11 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Crypto P&L Glance',
   description: 'Your crypto\'s profit & loss, at a glance. Simple, private, essential.',
-  viewport: 'width=device-width, initial-scale=1',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({

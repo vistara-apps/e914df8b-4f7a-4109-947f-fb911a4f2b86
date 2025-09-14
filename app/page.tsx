@@ -43,7 +43,7 @@ export default function Home() {
               Welcome to P&L Glance
             </h2>
             <p className="text-text-secondary mb-6">
-              Add your first crypto holding to start tracking your portfolio's performance.
+              Add your first crypto holding to start tracking your portfolio&apos;s performance.
             </p>
             <button
               onClick={() => setShowAddModal(true)}
@@ -56,7 +56,7 @@ export default function Home() {
           <div className="bg-surface rounded-lg shadow-card p-4">
             <h3 className="font-medium text-text-primary mb-2">Privacy First</h3>
             <p className="text-sm text-text-secondary">
-              Your data stays on your device. We only fetch public price data to calculate your P&L.
+              Your data stays on your device. We only fetch public price data to calculate your P&amp;L.
             </p>
           </div>
         </div>
