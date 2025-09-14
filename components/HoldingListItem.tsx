@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { calculateHoldingPnL, formatCurrency, formatPercentage, getAssetIcon } from '../lib/utils';
 import type { Holding } from '../lib/types';
 
@@ -22,6 +23,7 @@ export function HoldingListItem({ holding, currentPrice, onRemove, isLoading }: 
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={getAssetIcon(holding.assetSymbol)}
               alt={holding.assetSymbol}
