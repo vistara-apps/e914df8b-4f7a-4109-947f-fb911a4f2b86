@@ -9,7 +9,13 @@
     "subtitle": "Your crypto's profit & loss, at a glance",
     "description": "A privacy-focused MiniApp for Base Wallet users to easily track the real-time profit and loss of their crypto holdings.",
     "primaryCategory": "finance",
-    "tags": ["crypto", "portfolio", "pnl", "tracking", "privacy"],
+    "tags": [
+      "crypto",
+      "portfolio",
+      "pnl",
+      "tracking",
+      "privacy"
+    ],
     "heroImageUrl": "https://crypto-pnl-glance.vercel.app/hero.png",
     "tagline": "Simple, private, essential",
     "ogTitle": "Crypto P&L Glance - Track Your Portfolio",

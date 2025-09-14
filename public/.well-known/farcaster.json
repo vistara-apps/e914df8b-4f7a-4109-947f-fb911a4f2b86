@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "Crypto P&L Glance",
+    "subtitle": "Built with Zara",
+    "description": "Crypto P&L Glance is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://e914df8b4f7a4109947ffb911a4f2b86-n603.vercel.app",
+    "splashImageUrl": "https://e914df8b4f7a4109947ffb911a4f2b86-n603.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://e914df8b4f7a4109947ffb911a4f2b86-n603.vercel.app/image.png",
+    "tagline": "Crypto P&L Glance",
+    "screenshotUrls": [
+      "https://e914df8b4f7a4109947ffb911a4f2b86-n603.vercel.app/screenshot.png",
+      "https://e914df8b4f7a4109947ffb911a4f2b86-n603.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://e914df8b4f7a4109947ffb911a4f2b86-n603.vercel.app/api/webhook"
+  }
+}
