@@ -1,0 +1,19 @@
+{
+  "frame": {
+    "version": "1",
+    "name": "Crypto P&L Glance",
+    "homeUrl": "https://crypto-pnl-glance.vercel.app",
+    "iconUrl": "https://crypto-pnl-glance.vercel.app/icon.png",
+    "splashImageUrl": "https://crypto-pnl-glance.vercel.app/splash.png",
+    "splashBackgroundColor": "#f1f5f9",
+    "subtitle": "Your crypto's profit & loss, at a glance",
+    "description": "A privacy-focused MiniApp for Base Wallet users to easily track the real-time profit and loss of their crypto holdings.",
+    "primaryCategory": "finance",
+    "tags": ["crypto", "portfolio", "pnl", "tracking", "privacy"],
+    "heroImageUrl": "https://crypto-pnl-glance.vercel.app/hero.png",
+    "tagline": "Simple, private, essential",
+    "ogTitle": "Crypto P&L Glance - Track Your Portfolio",
+    "ogDescription": "Privacy-focused crypto P&L tracking for Base Wallet users. Simple, private, essential.",
+    "ogImageUrl": "https://crypto-pnl-glance.vercel.app/og.png"
+  }
+}
