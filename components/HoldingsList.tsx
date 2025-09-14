@@ -7,10 +7,11 @@ interface HoldingsListProps {
   holdings: Holding[];
   prices: PriceData;
   onRemove: (id: string) => void;
+  onEdit: (holding: Holding) => void;
   isLoading: boolean;
 }
 
-export function HoldingsList({ holdings, prices, onRemove, isLoading }: HoldingsListProps) {
+export function HoldingsList({ holdings, prices, onRemove, onEdit, isLoading }: HoldingsListProps) {
   if (holdings.length === 0) {
     return null;
   }
@@ -28,6 +29,7 @@ export function HoldingsList({ holdings, prices, onRemove, isLoading }: Holdings
             holding={holding}
             currentPrice={prices[holding.assetSymbol.toLowerCase()]?.usd || 0}
             onRemove={() => onRemove(holding.id)}
+            onEdit={onEdit}
             isLoading={isLoading}
           />
         </div>

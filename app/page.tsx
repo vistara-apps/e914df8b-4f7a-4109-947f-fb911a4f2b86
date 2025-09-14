@@ -12,7 +12,8 @@ import type { Holding } from '../lib/types';
 
 export default function Home() {
   const [showAddModal, setShowAddModal] = useState(false);
-  const { holdings, addHolding, removeHolding, isLoading: holdingsLoading } = useHoldings();
+  const [editingHolding, setEditingHolding] = useState<Holding | null>(null);
+  const { holdings, addHolding, removeHolding, updateHolding, isLoading: holdingsLoading } = useHoldings();
   const { prices, isLoading: pricesLoading } = usePrices(holdings);
 
   const totalPnL = calculateTotalPnL(holdings, prices);
@@ -21,6 +22,17 @@ export default function Home() {
   const handleAddHolding = (holding: Omit<Holding, 'id'>) => {
     addHolding(holding);
     setShowAddModal(false);
+  };
+
+  const handleEditHolding = (holding: Holding) => {
+    setEditingHolding(holding);
+  };
+
+  const handleUpdateHolding = (holding: Omit<Holding, 'id'>) => {
+    if (editingHolding) {
+      updateHolding(editingHolding.id, holding);
+      setEditingHolding(null);
+    }
   };
 
   // Show onboarding if no holdings
@@ -121,6 +133,7 @@ export default function Home() {
           holdings={holdings}
           prices={prices}
           onRemove={removeHolding}
+          onEdit={handleEditHolding}
           isLoading={pricesLoading}
         />
 
@@ -130,6 +143,18 @@ export default function Home() {
             <InputForm
               onSubmit={handleAddHolding}
               onCancel={() => setShowAddModal(false)}
+            />
+          </Modal>
+        )}
+
+        {/* Edit Holding Modal */}
+        {editingHolding && (
+          <Modal onClose={() => setEditingHolding(null)}>
+            <InputForm
+              initialHolding={editingHolding}
+              onSubmit={handleUpdateHolding}
+              onCancel={() => setEditingHolding(null)}
+              submitLabel="Update Holding"
             />
           </Modal>
         )}

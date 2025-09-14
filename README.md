@@ -14,7 +14,7 @@ A privacy-focused Base Mini App for tracking cryptocurrency profit and loss in r
 
 - **Framework**: Next.js 15 with App Router
 - **Styling**: Tailwind CSS
-- **Base Integration**: MiniKit for Base Mini App functionality
+- **Base Integration**: OnchainKit for Base Mini App functionality
 - **Price Data**: CoinGecko API
 - **Storage**: Local storage for privacy
 
@@ -46,7 +46,7 @@ A privacy-focused Base Mini App for tracking cryptocurrency profit and loss in r
 This app is designed to be deployed as a Base Mini App. Make sure to:
 
 1. Update the manifest.json with your actual deployment URLs
-2. Set the NEXT_PUBLIC_MINIKIT_API_KEY environment variable
+2. Set the NEXT_PUBLIC_ONCHAINKIT_API_KEY environment variable (optional)
 3. Deploy to a platform that supports Next.js (Vercel, Netlify, etc.)
 
 ## Contributing

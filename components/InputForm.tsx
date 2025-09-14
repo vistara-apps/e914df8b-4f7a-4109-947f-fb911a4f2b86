@@ -6,6 +6,8 @@ import type { Holding } from '../lib/types';
 interface InputFormProps {
   onSubmit: (holding: Omit<Holding, 'id'>) => void;
   onCancel: () => void;
+  initialHolding?: Holding;
+  submitLabel?: string;
 }
 
 const POPULAR_ASSETS = [
@@ -17,12 +19,12 @@ const POPULAR_ASSETS = [
   { symbol: 'AVAX', name: 'Avalanche' },
 ];
 
-export function InputForm({ onSubmit, onCancel }: InputFormProps) {
+export function InputForm({ onSubmit, onCancel, initialHolding, submitLabel = 'Add Holding' }: InputFormProps) {
   const [formData, setFormData] = useState({
-    assetSymbol: '',
-    quantity: '',
-    costBasisPerUnit: '',
-    transactionDate: new Date().toISOString().split('T')[0],
+    assetSymbol: initialHolding?.assetSymbol || '',
+    quantity: initialHolding?.quantity?.toString() || '',
+    costBasisPerUnit: initialHolding?.costBasisPerUnit?.toString() || '',
+    transactionDate: initialHolding?.transactionDate || new Date().toISOString().split('T')[0],
   });
   
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -81,7 +83,9 @@ export function InputForm({ onSubmit, onCancel }: InputFormProps) {
 
   return (
     <div className="bg-surface rounded-lg p-6 max-w-md w-full mx-4">
-      <h2 className="text-xl font-semibold text-text-primary mb-6">Add Holding</h2>
+      <h2 className="text-xl font-semibold text-text-primary mb-6">
+        {initialHolding ? 'Edit Holding' : 'Add Holding'}
+      </h2>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Asset Symbol */}
@@ -192,7 +196,7 @@ export function InputForm({ onSubmit, onCancel }: InputFormProps) {
             disabled={isSubmitting}
             className="flex-1 px-4 py-2 bg-primary text-white rounded-md hover:opacity-90 transition-opacity duration-200 disabled:opacity-50"
           >
-            {isSubmitting ? 'Adding...' : 'Add Holding'}
+            {isSubmitting ? (initialHolding ? 'Updating...' : 'Adding...') : submitLabel}
           </button>
         </div>
       </form>

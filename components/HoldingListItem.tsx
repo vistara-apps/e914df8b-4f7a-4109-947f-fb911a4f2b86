@@ -8,10 +8,11 @@ interface HoldingListItemProps {
   holding: Holding;
   currentPrice: number;
   onRemove: () => void;
+  onEdit: (holding: Holding) => void;
   isLoading: boolean;
 }
 
-export function HoldingListItem({ holding, currentPrice, onRemove, isLoading }: HoldingListItemProps) {
+export function HoldingListItem({ holding, currentPrice, onRemove, onEdit, isLoading }: HoldingListItemProps) {
   const [showActions, setShowActions] = useState(false);
   
   const holdingWithPnL = calculateHoldingPnL(holding, currentPrice);
@@ -100,12 +101,20 @@ export function HoldingListItem({ holding, currentPrice, onRemove, isLoading }: 
             </div>
           </div>
           
-          <button
-            onClick={onRemove}
-            className="w-full bg-red-50 text-red-600 py-2 px-4 rounded-md text-sm font-medium hover:bg-red-100 transition-colors duration-200"
-          >
-            Remove Holding
-          </button>
+          <div className="flex space-x-2">
+            <button
+              onClick={() => onEdit(holding)}
+              className="flex-1 bg-gray-50 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors duration-200"
+            >
+              Edit
+            </button>
+            <button
+              onClick={onRemove}
+              className="flex-1 bg-red-50 text-red-600 py-2 px-4 rounded-md text-sm font-medium hover:bg-red-100 transition-colors duration-200"
+            >
+              Remove
+            </button>
+          </div>
         </div>
       )}
     </div>
